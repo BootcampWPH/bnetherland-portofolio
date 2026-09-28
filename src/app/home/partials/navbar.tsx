@@ -1,7 +1,9 @@
 // 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navigationData } from '@/constant/navigation-data';
+import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -36,6 +38,34 @@ const Navbar = () => {
         </Button>
 
         {/* hamburger menu */}
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <Menu className="cursor-pointer lg:hidden" />
+          </SheetTrigger>
+
+          <SheetContent>
+            <nav className="mt-16">
+              <ul className="flex flex-col gap-4">
+                {navigationData.map((data) => (
+                  <li key={data.label}>
+                    <SheetClose>
+                      <Link href={data.href} className="hover:text-primary-200 py-4">
+                        {data.label}
+                      </Link>
+                    </SheetClose>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <Button asChild className="mt-3 w-full">
+              <SheetClose asChild>
+                <Link href="#contact">Get Started</Link>
+              </SheetClose>
+            </Button>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

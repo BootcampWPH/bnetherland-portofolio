@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-/* @config '../../tailwind.config.ts' */
+@config '../../tailwind.config.ts';
 
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -7,7 +7,6 @@
 @custom-variant dark (&:is(.dark *));
 
 /* design system */
-@import 'tailwindcss';
 
 @theme {
   /* Font Family */

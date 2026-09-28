@@ -1,5 +1,7 @@
+import FeatureCard from '@/components/feature-card';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { Icon } from '@iconify/react';
 import Link from 'next/link';
 
 const Hero = () => {
@@ -27,10 +29,32 @@ const Hero = () => {
         style={{ height: 'clamp(21.25rem, 52.73vw, 39.81rem)' }}
       >
         <Image alt="hero-image" className="object-contain" fill src="/images/hero-image.png" />
+
+        <FeatureCard
+          icon={<Icon icon="mingcute:flash-fill" />}
+          title="Elite Solutions"
+          description="Cutting-edge tech, flawless execution"
+          className="absolute -translate-x-[6.25%] top-[10%] right-1/2"
+        />
+
+        <FeatureCard
+          icon={<Icon icon="ri:brain-fill" />}
+          title="Smart Tech"
+          description="Innovation that drives real growth."
+          className="absolute top-[43%] left-1/2 translate-x-[37.5%]"
+        />
+
+        <FeatureCard
+          className="absolute top-[49%] right-1/2 -translate-x-[48%]"
+          title="Real Impact"
+          description="We turn ideas into measurable success"
+          icon={<Icon icon="bi:bar-chart-fill" />}
+        />
       </div>
 
       {/* decoration */}
-      <div />
+
+      <div className="from-base-background absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t to-transparent" />
     </section>
   );
 };
