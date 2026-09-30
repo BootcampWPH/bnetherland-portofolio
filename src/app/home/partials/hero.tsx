@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
+import SkewMotion from '@/components/skew-motion';
 
 const Hero = () => {
   return (
@@ -28,7 +29,9 @@ const Hero = () => {
         className="relative flex-[4.7] basis-80"
         style={{ height: 'clamp(21.25rem, 52.73vw, 39.81rem)' }}
       >
-        <Image alt="hero-image" className="object-contain" fill src="/images/hero-image.png" />
+        <SkewMotion asChild>
+          <Image alt="hero-image" className="object-contain" fill src="/images/hero-image.png" />
+        </SkewMotion>
 
         <FeatureCard
           icon={<Icon icon="mingcute:flash-fill" />}
